@@ -1,0 +1,6 @@
+li = [10,9,7,6,5]
+res = [i for i in range(li[0],li[len(li)-1]-1,-1)]
+i = li[0]
+for j in res:
+    if j not in li:
+        print(j)

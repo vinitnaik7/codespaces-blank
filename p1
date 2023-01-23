@@ -1,0 +1,14 @@
+
+N = 30
+i =0
+while i < N:
+    i = i + 1
+    if (i % 4 == 0) & (i % 6 == 0):
+        print("fizzbuzz")
+        continue
+    if i % 4 == 0:
+        print("fizz")
+        continue
+    if i % 6 == 0:
+        print("buzz")
+        continue

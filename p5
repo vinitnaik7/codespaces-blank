@@ -1,0 +1,26 @@
+def median_coroutine():
+    values = []
+    while True:
+        value = yield
+        if value is None:
+            return
+        values.append(value)
+        values.sort()
+        if len(values) % 2 == 0:
+            yield (values[len(values)//2] + values[len(values)//2-1]) / 2
+        else:
+            yield values[len(values)//2]
+
+mc = median_coroutine()
+next(mc)
+print(mc.send(5))
+next(mc)
+print(mc.send(8))
+next(mc)
+print(mc.send(3))
+next(mc)
+print(mc.send(10))
+next(mc)
+print(mc.send(1))
+next(mc)
+mc.close()
